@@ -1,7 +1,5 @@
-package com.firstprojectsb.learnspringframework.app03gamingspringbeans;
+package com.firstprojectsb.learnspringframework.game;
 
-import com.firstprojectsb.learnspringframework.game.GameRunner;
-import com.firstprojectsb.learnspringframework.game.GamingConsole;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
