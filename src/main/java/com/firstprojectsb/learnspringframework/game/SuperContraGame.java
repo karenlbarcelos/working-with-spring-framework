@@ -1,7 +1,5 @@
 package com.firstprojectsb.learnspringframework.game;
 
-import com.firstprojectsb.learnspringframework.game.GamingConsole;
-
 public class SuperContraGame implements GamingConsole {
 
     public void up(){

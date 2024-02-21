@@ -1,7 +1,8 @@
 package com.firstprojectsb.learnspringframework.game;
 
-import com.firstprojectsb.learnspringframework.game.GamingConsole;
+import org.springframework.stereotype.Component;
 
+@Component  //permite que o spring crie beans por conta propria
 public class PacManGame implements GamingConsole {
 
     public void up(){
