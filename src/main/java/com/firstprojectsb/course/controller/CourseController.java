@@ -4,10 +4,12 @@ import com.firstprojectsb.course.bean.Course;
 import com.firstprojectsb.course.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CourseController {
@@ -24,8 +26,13 @@ public class CourseController {
     }
 
     //http://localhost:8080/courses/1
-    @GetMapping("/courses/1")
-    public Course getOneCourseDetails() {
-        return new Course(1, "ADS", "Ranga");
+    @GetMapping("/courses/{id}")
+    public Course getOneCourseDetails(@PathVariable long id) {
+        Optional<Course> course = courseRepository.findById(id);
+        if(course.isEmpty()){
+            throw new RuntimeException("Course not found with id " + id);
+        }
+        return course.get();
+        //return new Course(1, "ADS", "Ranga");
     }
 }
